@@ -6,7 +6,7 @@ import Modal from 'react-bootstrap/Modal';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './AuthForm.css';
 
-class Signup extends Componant {
+class Signup extends Component {
   state = {
     username: '',
     email: '',

@@ -35,7 +35,7 @@ class Navbar extends React.Component {
     return (
       <>
       <Login 
-      loginModalOpen={thisExpression.state.loginModalOpen}
+      loginModalOpen={this.state.loginModalOpen}
       handleLoginModalOpen={this.handleLoginModalOpen}
       setCurrentUser={this.props.setCurrentUser} />
       <Signup 
