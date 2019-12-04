@@ -9,7 +9,7 @@ export default ({ currentUser, setCurrentUser }) => (
     <Switch>
       <Route exact path='/' componant={Landing} />
       <Route path="/buy" />
-      <Route path="/sell/:userId" />
+      <Route path="/sell/" />
     </Switch>
   </div>
 );

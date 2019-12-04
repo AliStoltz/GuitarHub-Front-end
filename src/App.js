@@ -1,11 +1,9 @@
-import React from 'react';
+import React, { Compotent } from 'react';
+import axios from 'axios';
+import { withRouter } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="container">
-      <h1>Hello World</h1>
-    </div>
-  );
-};
+import Routes from './config/Routes';
+import Navbar from './components/NavBar/Navbar';
 
-export default App;
+import './App.css';
+

@@ -2,8 +2,9 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import axios from 'axios';
 
-// import Modal from 'react-bootstrap/Modal';
-// import './AuthForm.css';
+import Modal from 'react-bootstrap/Modal';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './AuthForm.css';
 
 class Login extends Component {
   state = {
@@ -33,7 +34,24 @@ class Login extends Component {
 
   render() {
     return (
-      <h1>modal</h1>
+      <Modal show={this.props.loginModalOpen} onHide={this.props.handleLoginModalOpen}>
+        <Modal.Header closeButton>
+          <Modal.Title>Login</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <form onSubmit={this.handleSubmit} >
+            <div className="form-group">
+              <label htmlFor="name">Username</label>
+              <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="username" name="username" value={this.state.username} />
+            </div>
+            <div className="form-group">
+              <label htmlFor="password">Password</label>
+              <input onChange={this.handleChange} className="form-control form-control-lg" type="password" id="password" name="password" value={this.state.password} />
+            </div>
+            <button className="btn btn-primary float-right" type="submit">Login</button>
+          </form>
+        </Modal.Body>
+      </Modal>
     )
   }
 };
