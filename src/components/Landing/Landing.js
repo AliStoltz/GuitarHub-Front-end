@@ -1,7 +1,6 @@
 import React from 'react';
 
 import './Landing.css';
-import { directive } from '@babel/types';
 
 const Landing = (props) => {
   return(

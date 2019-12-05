@@ -6,7 +6,7 @@ import Landing from '../components/Landing/Landing';
 export default ({ currentUser, setCurrentUser }) => (
   <div className="routes">
     <Switch>
-      <Route exact path='/' componant={Landing} />
+      <Route exact path='/' component={Landing} />
       <Route path="/buy" />
       <Route path="/sell/" />
     </Switch>
