@@ -1,0 +1,8 @@
+.hero img {
+  position: relative;
+  z-index: 0;
+  background-image: cover;
+  background-repeat: no-repeat;
+  height: 50vh;
+  width: 100%;
+}
