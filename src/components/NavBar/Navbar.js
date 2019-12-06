@@ -31,6 +31,11 @@ class Navbar extends React.Component {
     });
   };
 
+  handleSellRedirect = () => {
+    const userId = localStorage.getItem('uid');
+    this.props.history.push(`/sell/${userId}`);
+  };
+
   render () {
     return (
       <>
@@ -53,7 +58,7 @@ class Navbar extends React.Component {
             </li>
             </> : <>
             <li className="nav-item">
-              <span className="nav-link" onClick={this.handleProfileRedirect}>Profile</span>
+              <span className="nav-link" onClick={this.handleSellRedirect}>My Guitars</span>
             </li>
             <li className="nav-item">
               <span className="nav-link" onClick={this.props.logout}>Logout</span>

@@ -5,14 +5,18 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const LandingCarousel = (props) => {
   console.log(props)
+  function shuffle(guitars) {
+    guitars.sort(() => Math.random() -0.5);
+  }
+  shuffle(props.guitars);
   const guitars = props.guitars.map(guitar => {
-    
+  
     return (
       <>
       <div>
         <h2 className="ahhh"> {guitar.name}</h2>
         <img className="guitarImg"src={guitar.photo} alt="guitar"/>
-        <p>{guitar.price}</p>
+        <p>${guitar.price}.00</p>
       </div>
       </>
     )
