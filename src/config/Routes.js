@@ -9,7 +9,7 @@ export default ({ currentUser, setCurrentUser, guitars }) => (
   <div className="routes">
     <Switch>
       <Route exact path='/' render={() => <Landing guitars={guitars} currentUser={currentUser} setCurrentUser={setCurrentUser}/>} />
-      <Route path="/buy" render={() => <MarketContainer guitars={guitars} currentUser={currentUser} /> } />
+      <Route path="/buy/" render={() => <MarketContainer guitars={guitars} currentUser={currentUser} /> } />
       <Route path="/sell/" />
     </Switch>
   </div>

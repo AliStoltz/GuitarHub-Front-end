@@ -26,7 +26,8 @@ class Signup extends Component {
   };
 
   validateForm = (event) => {
-    if (this.state.passsord.length < 4) {
+    event.preventDefault()
+    if (this.state.password.length < 4) {
       this.setState({
         passwordValid: false,
       })
@@ -41,7 +42,7 @@ class Signup extends Component {
       } else {
         this.setState({
           password2Valid: true,
-        }, this.handleSubmit);
+        }, this.handleSubmit());
       };
     };
   }
@@ -53,7 +54,6 @@ class Signup extends Component {
       withCredentials: true,
     })
     .then((res) => {
-      
       if (res.data.status === 400 || res.data.status === 500) {
         this.setState({
           usernameValid: false,
@@ -61,7 +61,7 @@ class Signup extends Component {
         })
       } else {
         this.props.setCurrentUser(res.data.data);
-        this.props.history.push(`http://google.com/`);
+        this.props.history.push(`/buy/${res.data.data}`);
         this.props.handleSignupModalOpen();
       }
     })
@@ -87,8 +87,8 @@ class Signup extends Component {
               {this.state.emailValid ? null : <small className="error-msg">Please choose another username or email</small> }
             </div>
             <div className="form-group">
-              <label htmlFor="currentCity">Current City</label>
-              <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="currentCity" name="currentCity" value={this.state.currentCity} />
+              <label htmlFor="location">Your Location</label>
+              <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="location" name="location" value={this.state.location} />
             </div>
             <div className="form-group">
               <label htmlFor="password">Password</label>

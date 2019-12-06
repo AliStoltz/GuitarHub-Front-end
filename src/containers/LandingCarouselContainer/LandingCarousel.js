@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const LandingCarousel = (props) => {
   console.log(props)
   const guitars = props.guitars.map(guitar => {
+    
     return (
       <>
       <div>
