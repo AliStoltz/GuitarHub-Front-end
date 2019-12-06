@@ -47,11 +47,13 @@ class Signup extends Component {
   }
 
   handleSubmit = () => {
+    console.log('look at me')
     axios.post(`${process.env.REACT_APP_API_URL}/auth/register`,
     this.state, {
       withCredentials: true,
     })
     .then((res) => {
+      
       if (res.data.status === 400 || res.data.status === 500) {
         this.setState({
           usernameValid: false,
@@ -59,7 +61,7 @@ class Signup extends Component {
         })
       } else {
         this.props.setCurrentUser(res.data.data);
-        this.props.history.push(`/users/${res.data.data}`);
+        this.props.history.push(`http://google.com/`);
         this.props.handleSignupModalOpen();
       }
     })

@@ -10,10 +10,11 @@ import './Navbar.css';
 class Navbar extends React.Component {
   state = {
     loginModalOpen: false,
-    SignupModalOpen: false,
+    signupModalOpen: false,
   };
 
   handleLoginModalOpen = () => {
+    console.log('login clicked')
     this.setState((prevState) => {
       return {
         loginModalOpen: !prevState.loginModalOpen
@@ -22,6 +23,7 @@ class Navbar extends React.Component {
   };
 
   handleSignupModalOpen = () => {
+    console.log('signup clicked')
     this.setState((prevState) => {
       return {
         signupModalOpen: !prevState.signupModalOpen
@@ -34,9 +36,6 @@ class Navbar extends React.Component {
       <>
       <nav className="navbar navbar-expand-md navbar-dark bg-dark">
         <Link className="navbar-brand" to="/">
-        <div className="logo-container">
-          {/* <img src={logo} /> */}
-        </div>
         <span>GuitarHub</span>
         </Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,10 +53,10 @@ class Navbar extends React.Component {
             </li>
             </> : <>
             <li className="nav-item">
-              <a className="nav-link" onClick={this.handleProfileRedirect}>Profile</a>
+              <span className="nav-link" onClick={this.handleProfileRedirect}>Profile</span>
             </li>
             <li className="nav-item">
-              <a className="nav-link" onClick={this.props.logout}>Logout</a>
+              <span className="nav-link" onClick={this.props.logout}>Logout</span>
             </li>
             </>
           }
@@ -69,7 +68,7 @@ class Navbar extends React.Component {
       handleLoginModalOpen={this.handleLoginModalOpen}
       setCurrentUser={this.props.setCurrentUser} />
       <Signup 
-      signupModalOpen={this.signupModalOpen}
+      signupModalOpen={this.state.signupModalOpen}
       handleSignupModalOpen={this.handleSignupModalOpen}
       setCurrentUser={this.props.setCurrentUser}/>
       </>

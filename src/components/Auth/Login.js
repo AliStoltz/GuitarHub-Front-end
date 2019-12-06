@@ -19,6 +19,7 @@ class Login extends Component {
   };
 
   handleSubmit = (event) => {
+    console.log('logged in')
     event.preventDefault();
     axios.post(`${process.env.REACT_APP_API_URL}/auth/login`,
     this.state, {
@@ -26,7 +27,7 @@ class Login extends Component {
     })
     .then((res) => {
       this.props.setCurrentUser(res.data.data);
-      this.props.history.push(`/users/${res.data.data}`);
+      this.props.history.push(`/buy/${res.data.data}`);
       this.props.handleLoginModalOpen();
     })
     .catch((error) => console.log(error));

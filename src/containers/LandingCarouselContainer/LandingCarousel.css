@@ -11,6 +11,5 @@
 }
 
 .carousel-item {
-  display: flex;
-  flex-direction: row;
+  padding-bottom: 15px;
 }

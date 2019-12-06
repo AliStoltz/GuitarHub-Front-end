@@ -1,0 +1,23 @@
+
+aside {
+  width: 26%;
+  height: 100%;
+  text-align: center;
+  padding-right: 16px;
+  padding-right: 1rem;
+}
+
+aside {
+  padding-top: 48px;
+  padding-top: 3rem;
+}
+aside ul {
+  list-style: none;
+  padding-left: 16px;
+  padding-left: 1rem;
+}
+aside li {
+  margin-bottom: 15px;
+  display: list-item;
+
+}

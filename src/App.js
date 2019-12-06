@@ -10,6 +10,24 @@ import './App.css';
 class App extends Component {
   state = {
     currentUser: localStorage.getItem('uid'),
+    guitars: [],
+    filteredGuitars: [],
+  };
+
+
+  componentDidMount() {
+    this.test();
+  };
+
+  test = () => {
+    axios.get(`${process.env.REACT_APP_API_URL}/guitars/all`)
+    .then((res) => {
+      console.log(res.data);
+      this.setState({
+        guitars: res.data.data
+      })
+    })
+    .catch((err) => console.log(err));
   };
 
   setCurrentUser = (userId) => {
@@ -36,7 +54,8 @@ class App extends Component {
         logout={this.logout} />
         <Routes
         currentUser={this.state.currentUser}
-        setCurrentUser={this.setCurrentUser} />
+        setCurrentUser={this.setCurrentUser} 
+        guitars={this.state.guitars} />
       </div>
     );
   }
