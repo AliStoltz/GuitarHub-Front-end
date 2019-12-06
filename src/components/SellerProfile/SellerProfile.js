@@ -7,7 +7,6 @@ import axios from 'axios';
 class SellerProfile extends Component {
 
 
-
   render () {
     return (
       <div className="seller-container">

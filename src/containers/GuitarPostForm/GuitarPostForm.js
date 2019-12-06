@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Modal from 'react-bootstrap/Modal';
+import './GuitarPostForm.css'
 import axios from 'axios';
 
 
@@ -59,18 +61,19 @@ class GuitarPostForm extends Component {
       withCredentials: true
     })
     .then((res) => {
-      this.props.handlePostFormOpen();
+      this.props.handleGuitarFormOpen();
     })
     .catch((error) => console.log(error));
   }
 
   render () {
     return (
-      <Modal show={this.props.postFormOpen} onHide={this.props.handlePostFormOpen}>
-      <Modal.Header closeButton>
-        <Modal.Title>Post a Guitar</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
+      // <Modal show={this.props.guitarFormOpen} onHide={this.props.handleGuitarFormOpen}>
+      // <Modal.Header closeButton>
+      //   <Modal.Title>Post a Guitar</Modal.Title>
+      // </Modal.Header>
+      // <Modal.Body>
+      <div className="guitar-form">
         <form onSubmit={this.handleSubmit} >
           <div className="form-group">
             <label htmlFor="name">Type of Guitar</label>
@@ -99,8 +102,9 @@ class GuitarPostForm extends Component {
           </div>
           <button className="btn btn-primary float-right" type="submit" disabled={this.state.button}>Post</button>
         </form>
-      </Modal.Body>
-    </Modal>
+      </div>
+    //   </Modal.Body>
+    // </Modal>
     )
   }
 }

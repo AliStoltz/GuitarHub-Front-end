@@ -1,0 +1,7 @@
+.user-profile {
+  padding: 20px;
+  margin: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
