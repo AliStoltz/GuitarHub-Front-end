@@ -7,16 +7,7 @@ import GuitarPostForm from '../GuitarPostForm/GuitarPostForm';
 class SellerContainer extends Component {
   state = {
     profile: {},
-    guitarFormOpen: false,
     userGuitars: [],
-  }
-
-  handleGuitarFormOpen = () => {
-    this.setState((prevState) => {
-      return {
-        guitarFormOpen: !prevState.guitarFormOpen
-      }
-    });
   }
 
   componentDidMount() {
@@ -44,6 +35,23 @@ class SellerContainer extends Component {
   };
 
 
+
+
+  // Create your handleAddNewGuitar method
+  handleNewGuitar = (newGuitar) => {
+    axios.post(`${process.env.REACT_APP_API_URL}/guitars/new`, newGuitar ,{
+      withCredentials: true
+    })
+    .then((res) => {
+      console.log(res.data.data);
+      this.setState({
+        userGuitars: [newGuitar, ...this.state.userGuitars] 
+      })
+    })
+    .catch((error) => console.log(error));
+    }
+    
+
   render() {
     console.log(this.state.profile)
     return(
@@ -53,9 +61,8 @@ class SellerContainer extends Component {
         <p>{this.state.profile.location}</p>
       </div>
       <div className="user-profile">
-      <GuitarPostForm guitarFormOpen={this.state.guitarFormOpen}
-      handleGuitarFormOpen={this.handleGuitarFormOpen}
-      currentUser={this.props.currentUser} />
+      <GuitarPostForm 
+      currentUser={this.props.currentUser} handleNewGuitar={this.handleNewGuitar} handleChange={this.handleChange}/>
       <Guitars guitars={this.state.userGuitars} />
       </div>
       </>

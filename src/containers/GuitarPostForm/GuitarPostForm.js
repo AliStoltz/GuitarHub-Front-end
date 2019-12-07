@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Modal from 'react-bootstrap/Modal';
 import './GuitarPostForm.css'
 import axios from 'axios';
 
@@ -56,23 +55,14 @@ class GuitarPostForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    axios.post(`${process.env.REACT_APP_API_URL}/guitars/new`,
-    this.state, {
-      withCredentials: true
-    })
-    .then((res) => {
-      this.props.handleGuitarFormOpen();
-    })
-    .catch((error) => console.log(error));
+    // Call the handleAddNewGuitar method from the parent container (SellerContainer).
+    // ie this.props.handleAddNewGuitar(this.state);
+    this.props.handleNewGuitar(this.state);
+
   }
 
   render () {
     return (
-      // <Modal show={this.props.guitarFormOpen} onHide={this.props.handleGuitarFormOpen}>
-      // <Modal.Header closeButton>
-      //   <Modal.Title>Post a Guitar</Modal.Title>
-      // </Modal.Header>
-      // <Modal.Body>
       <div className="guitar-form">
         <form onSubmit={this.handleSubmit} >
           <div className="form-group">
@@ -97,14 +87,12 @@ class GuitarPostForm extends Component {
           </div>
           <div className="form-group">
             <label htmlFor="price">Asking price</label>
-            <textarea onChange={this.handleChange} className="form-control form-control-lg" type="text" id="price" name="price" value={this.state.price} required />
+            <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="price" name="price" value={this.state.price} required />
             {this.state.priceReq === false ? null : <small className="error-msg">Please add the price.</small>}
           </div>
           <button className="btn btn-primary float-right" type="submit" disabled={this.state.button}>Post</button>
         </form>
       </div>
-    //   </Modal.Body>
-    // </Modal>
     )
   }
 }

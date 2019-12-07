@@ -36,6 +36,10 @@ class Navbar extends React.Component {
     this.props.history.push(`/sell/${userId}`);
   };
 
+  handleBuyRedirect = () => {
+    this.props.history.push(`/buy`);
+  }
+
   render () {
     return (
       <>
@@ -56,12 +60,18 @@ class Navbar extends React.Component {
             <li className="nav-item">
               <button type="button" className="btn btn-outline-light nav-link nav-link" onClick={this.handleSignupModalOpen}>Sign up</button>
             </li>
+            <li className="nav-item">
+              <button type="button" className="btn btn-outline-light nav-link nav-link" onClick={this.handleBuyRedirect}>Shop Guitars</button>
+            </li>
             </> : <>
             <li className="nav-item">
-              <span className="nav-link" onClick={this.handleSellRedirect}>My Guitars</span>
+              <button type="button" className="btn btn-outline-light nav-link nav-link" onClick={this.handleBuyRedirect}>Shop Guitars</button>
             </li>
             <li className="nav-item">
-              <span className="nav-link" onClick={this.props.logout}>Logout</span>
+              <span className="btn btn-outline-light nav-link nav-link" onClick={this.handleSellRedirect}>My Guitars</span>
+            </li>
+            <li className="nav-item">
+              <span className="btn btn-outline-light nav-link nav-link" onClick={this.props.logout}>Logout</span>
             </li>
             </>
           }
