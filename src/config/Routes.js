@@ -13,7 +13,7 @@ export default ({ currentUser, setCurrentUser, guitars }) => (
       <Route exact path='/' render={() => <Landing guitars={guitars} currentUser={currentUser} setCurrentUser={setCurrentUser}/>} />
       <Route path="/buy/" render={() => <MarketContainer guitars={guitars} currentUser={currentUser} /> } />
       <Route path="/sell/:id" render={() => <SellerProfile currentUser={currentUser} />} />
-      <Route path="/details/" render={() => <GuitarDetails />} />
+      <Route path="/details/:id" render={() => <GuitarDetails />} />
     </Switch>
   </div>
 );
