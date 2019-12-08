@@ -1,65 +1,58 @@
 import React, { Component } from 'react';
-import './GuitarPostForm.css'
 import axios from 'axios';
+import Button from 'react-bootstrap/Button';
 
+import './EditGuitarInfo.css';
 
-class GuitarPostForm extends Component {
+class EditGuitarInfo extends Component {
   state = {
     name: '',
-    photo: '',
+    Photo: '',
     condition: '',
     description: '',
     price: '',
-    nameReq: true,
-    photoReq: true,
-    conditionReq: true,
-    descriptionReq: true,
-    priceReq: true,
-    button: true,
-  };
+  }
 
-  checkRequiredFields = () => {
-    let nameReq = true;
-    let photoReq = true;
-    let conditionReq = true;
-    let descriptionReq = true;
-    let priceReq = true;
-    let button = true;
-
-    if (this.state.name.length > 0) {
-      nameReq = false;
-    }
-    if (this.state.photo.length < 10 === false) {
-      photoReq = false;
-    }
-    if (this.state.condition.length > 0) {
-      conditionReq = false;
-    }
-    if (this.state.description.length < 10 === false) {
-      descriptionReq = false;
-    }
-    if (this.state.price.length > 0) {
-      priceReq = false;
-    }
-    if (!nameReq && !photoReq && !conditionReq && !descriptionReq && !priceReq) {
-      button = false;
-    }
-    this.setState({nameReq,photoReq,conditionReq,descriptionReq,priceReq,button});
+  componentDidMount() {
+    this.setState({
+      name: this.props.guitar.name,
+      photo: this.props.guitar.photo,
+      condition: this.props.guitar.condition,
+      description: this.props.guitar.description,
+      price: this.props.guitar.price,
+    })
   }
 
   handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value,
-    }, this.checkRequiredFields);
+    })
   };
 
-  handleSubmit = (event) => {
+  saveChanges = (event) => {
+    console.log('clicked save ----->')
+    const guitarId = this.props.guitar._id;
     event.preventDefault();
-    this.props.handleNewGuitar(this.state);
-
-  }
+    let body = {
+      name: this.state.name,
+      photo: this.state.photo,
+      description: this.state.description,
+      price: this.state.price,
+    }
+    axios.put(`${process.env.REACT_APP_API_URL}/guitars/${guitarId}`, body, {
+      withCredentials: true,
+    })
+    .then((res) => {
+      this.props.updateState(body);
+      this.setState({
+        userGuitars: this.state.userGuitars
+      })
+    })
+    .catch((error) => console.log(error));
+  };
 
   render () {
+
     return (
       <div className="guitar-form">
         <form onSubmit={this.handleSubmit} >
@@ -88,11 +81,11 @@ class GuitarPostForm extends Component {
             <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="price" name="price" value={this.state.price} required />
             {this.state.priceReq === false ? null : <small className="error-msg">Please add the price.</small>}
           </div>
-          <button className="btn btn-primary float-right" type="submit" disabled={this.state.button}>Post</button>
+          <Button id="save" name="save-guitar" onClick={this.saveChanges} variant="outline-secondary">Save Changes</Button>
         </form>
       </div>
     )
   }
-}
+};
 
-export default GuitarPostForm;
+export default EditGuitarInfo;

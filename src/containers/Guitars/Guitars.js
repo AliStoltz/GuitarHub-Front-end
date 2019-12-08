@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button';
 import './Guitars.css';
 
 const Guitars = (props) => {
@@ -11,6 +12,7 @@ const Guitars = (props) => {
           <h3>{guitar.name}</h3>
           <p>{guitar.description}</p>
         </div>
+        <Button id="edit" name="edit-guitar" onClick={() => props.editGuitar(guitar)} variant="outline-secondary">Edit Post</Button>
       </div>
     )
   })

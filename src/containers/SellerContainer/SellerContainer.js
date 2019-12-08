@@ -3,11 +3,14 @@ import axios from 'axios';
 import './SellerContainer.css';
 import Guitars from '../Guitars/Guitars';
 import GuitarPostForm from '../GuitarPostForm/GuitarPostForm';
+import EditGuitarInfo from '../../components/EditGuitarInfo/EditGuitarInfo';
 
 class SellerContainer extends Component {
   state = {
     profile: {},
     userGuitars: [],
+    guitar: {},
+    edit: false,
   }
 
   componentDidMount() {
@@ -34,8 +37,26 @@ class SellerContainer extends Component {
     .catch(error => console.log(error));
   };
 
+  editGuitar = (guitar) => {
+    this.setState({ 
+      edit: true,
+      guitar: guitar,
+    })
+  };
 
+    // let newGuitarList = this.state.arr.filter(guitar => this.guitar._id !== this.guitar.id);
+    // newGuitarList.push(guitar)
+    // this.setState({arr:newGuitarList})
 
+  updateState = (updatedGuitar) => {
+    console.log(updatedGuitar)
+    this.setState({
+      profile: updatedGuitar,
+      edit: false,
+      userGuitars: [updatedGuitar, ...this.state.userGuitars],
+    });
+    this.componentDidMount();
+  };
 
   // Create your handleAddNewGuitar method
   handleNewGuitar = (newGuitar) => {
@@ -61,10 +82,12 @@ class SellerContainer extends Component {
         <p>{this.state.profile.location}</p>
       </div>
       <div className="user-profile">
-      <GuitarPostForm 
-      currentUser={this.props.currentUser} handleNewGuitar={this.handleNewGuitar} handleChange={this.handleChange}/>
-      <Guitars guitars={this.state.userGuitars} />
-      </div>
+        {this.state.edit ?
+        <EditGuitarInfo guitar={this.state.guitar} updateState={this.updateState} userGuitars={this.state.userGuitars}/>
+        : <GuitarPostForm 
+        currentUser={this.props.currentUser} handleNewGuitar={this.handleNewGuitar} handleChange={this.handleChange}/> }
+        <Guitars guitars={this.state.userGuitars} editGuitar={this.editGuitar}  /> 
+        </div>
       </>
     )
   }
