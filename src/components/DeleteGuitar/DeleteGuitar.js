@@ -6,21 +6,24 @@ import Modal from 'react-bootstrap/Modal';
 class DeleteGuitar extends Component {
   state = {
     confirmed: false,
+    
   };
 
   handleDelete = (guitar) => {
     axios.delete(`${process.env.REACT_APP_API_URL}/guitars/${guitar._id}`)
     .then((res) => {
       this.props.handleDeleteModalOpen();
-      // this.setState({
-      //   userGuitars: this.state.userGuitars
-      // })
+      this.refreshPage();
     })
     .catch(error => console.log(error));
   };
 
   handleCancel = () => {
     this.props.handleDeleteModalOpen();
+  };
+
+  refreshPage = () => {
+    window.location.reload(false);
   };
 
   render() {

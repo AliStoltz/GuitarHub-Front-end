@@ -47,6 +47,7 @@ class SellerContainer extends Component {
         guitar: guitar,
       };
     });
+    
   };
 
   editGuitar = (guitar) => {
