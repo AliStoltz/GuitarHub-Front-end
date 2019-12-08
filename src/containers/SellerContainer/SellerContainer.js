@@ -4,6 +4,8 @@ import './SellerContainer.css';
 import Guitars from '../Guitars/Guitars';
 import GuitarPostForm from '../GuitarPostForm/GuitarPostForm';
 import EditGuitarInfo from '../../components/EditGuitarInfo/EditGuitarInfo';
+import DeleteGuitar from '../../components/DeleteGuitar/DeleteGuitar';
+
 
 class SellerContainer extends Component {
   state = {
@@ -11,6 +13,7 @@ class SellerContainer extends Component {
     userGuitars: [],
     guitar: {},
     edit: false,
+    deleteModalOpen: false,
   }
 
   componentDidMount() {
@@ -35,6 +38,15 @@ class SellerContainer extends Component {
       });
     })
     .catch(error => console.log(error));
+  };
+
+  handleDeleteModalOpen = (guitar) => {
+    this.setState((prevState) => {
+      return {
+        deleteModalOpen: !prevState.deleteModalOpen,
+        guitar: guitar,
+      };
+    });
   };
 
   editGuitar = (guitar) => {
@@ -86,7 +98,9 @@ class SellerContainer extends Component {
         <EditGuitarInfo guitar={this.state.guitar} updateState={this.updateState} userGuitars={this.state.userGuitars}/>
         : <GuitarPostForm 
         currentUser={this.props.currentUser} handleNewGuitar={this.handleNewGuitar} handleChange={this.handleChange}/> }
-        <Guitars guitars={this.state.userGuitars} editGuitar={this.editGuitar}  /> 
+        <Guitars guitars={this.state.userGuitars} editGuitar={this.editGuitar} deleteModalOpen={this.state.deleteModalOpen} handleDeleteModalOpen={this.handleDeleteModalOpen}
+         /> 
+        <DeleteGuitar guitar={this.state.guitar} deleteModalOpen={this.state.deleteModalOpen} handleDeleteModalOpen={this.handleDeleteModalOpen}/>
         </div>
       </>
     )

@@ -13,6 +13,7 @@ const Guitars = (props) => {
           <p>{guitar.description}</p>
         </div>
         <Button id="edit" name="edit-guitar" onClick={() => props.editGuitar(guitar)} variant="outline-secondary">Edit Post</Button>
+        <Button className='remove' onClick={() => props.handleDeleteModalOpen(guitar)} variant="outline-primary">Delete</Button>
       </div>
     )
   })
