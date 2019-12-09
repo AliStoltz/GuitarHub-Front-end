@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router';
+import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 
 import './GuitarDetialsContainer.css'
+import PurchaseGuitar from '../../components/PurchaseGuitar/PurchaseGuitar';
 
 class GuitarDetailsContainer extends Component{
   state = {
     detail: {},
     user: {},
+    purchase: false,
+    purchaseModalOpen: false,
   }
 
   componentDidMount() {
@@ -27,6 +31,20 @@ class GuitarDetailsContainer extends Component{
     .catch((error) => console.log(error));
   }
 
+
+  handlePurchaseModalOpen = () => {
+    this.setState((prevState) => {
+      return {
+        purchaseModalOpen: !prevState.purchaseModalOpen,
+        purchase: !prevState.purchase,
+      }
+    })
+  }
+
+  handlePurchaseCancel = () => {
+    this.handlePurchaseModalOpen();
+  }
+
   
 
   render() {
@@ -44,7 +62,11 @@ class GuitarDetailsContainer extends Component{
         <br/>
         <p><em>Description:</em> {this.state.detail.description}</p>
         <p>posted by: {this.state.user.username}</p>
+        <br/>
+        <Button id="addCart" name="add-guitar" onClick={() => this.handlePurchaseModalOpen()} variant="outline-primary">Add To Cart</Button>
       </div>
+      <PurchaseGuitar purchaseModalOpen={this.state.purchaseModalOpen} handlePurchaseModalOpen={this.handlePurchaseModalOpen} handlePurchaseCancel={this.handlePurchaseCancel}
+       />
       </>
     )
   }

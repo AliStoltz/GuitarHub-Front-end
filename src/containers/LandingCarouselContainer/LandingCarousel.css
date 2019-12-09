@@ -5,14 +5,18 @@
 }
 
 .container {
- 
   height: 30px;
   width: 100%;
 }
 
+
 .carousel-item {
-  /* min-height: 30px; */
-  display: flex;
-  flex-direction: row;
+  /* display: flex;
+  flex-direction: row; */
   padding-bottom: 15px;
+  /* justify-content: space-evenly; */
+}
+
+.item {
+  max-width: 150px;
 }

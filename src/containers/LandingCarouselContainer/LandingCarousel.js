@@ -34,25 +34,37 @@ const LandingCarousel = (props) => {
         { props.guitars.length ? 
         <>
         <div class="carousel-item active">
-          <div>
-            {guitars[0]}
+          <div className="row">
+            <div className="col">{guitars[0]}</div>
           </div>
-          <div>
-            {guitars[1]}
+          <div className="row">
+            <div className="col">{guitars[1]}</div>
           </div>
-          <div>
-            {guitars[2]}
+          <div className="row">
+            <div className="col">{guitars[2]}</div>
           </div>
         </div>
         <div class="carousel-item">
-          {guitars[3]}
-          {guitars[4]}
-          {guitars[5]}
+          <div className="row">
+            <div className="col">{guitars[3]}</div>
+          </div>
+          <div className="row">
+            <div className="col">{guitars[4]}</div>
+          </div>
+          <div className="row">
+            <div className="col">{guitars[5]}</div>
+          </div>
         </div>
         <div class="carousel-item">
-          {guitars[6]}
-          {guitars[7]}
-          {guitars[8]}
+          <div className="row">
+            <div className="col">{guitars[6]}</div>
+          </div>
+          <div className="row">
+            <div className="col">{guitars[7]}</div>
+          </div>
+          <div className="row">
+            <div className="col">{guitars[8]}</div>
+          </div>
         </div>
         </>
         :
