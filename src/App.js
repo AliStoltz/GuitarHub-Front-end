@@ -11,7 +11,9 @@ class App extends Component {
   state = {
     currentUser: localStorage.getItem('uid'),
     guitars: [],
-    filteredGuitars: [],
+    // filteredGuitars: [],
+    lowPrice: '',
+    highPrice: '',
   };
 
 
@@ -29,6 +31,27 @@ class App extends Component {
     })
     .catch((err) => console.log(err));
   };
+
+  setLowHighPrice = (low, high) => {
+    const lowPrice = Number(low);
+    const highPrice = Number(high);
+
+    const filteredGuitars = this.state.guitars.filter(guitar => {
+        console.log(guitar.price, highPrice, lowPrice);
+        return guitar.price >= lowPrice && guitar.price <= highPrice
+      });
+
+    console.log('FILTERED GUITARS = ', filteredGuitars);
+    this.setState({
+      guitars: filteredGuitars,
+    })
+  };
+
+  resetFilters = () => {
+    this.componentDidMount();
+  }
+
+
 
   setCurrentUser = (userId) => {
     this.setState({ currentUser: userId });
@@ -55,7 +78,7 @@ class App extends Component {
         <Routes
         currentUser={this.state.currentUser}
         setCurrentUser={this.setCurrentUser} 
-        guitars={this.state.guitars} />
+        guitars={this.state.guitars} setLowHighPrice={this.setLowHighPrice} resetFilters={this.resetFilters}/>
       </div>
     );
   }

@@ -24,7 +24,7 @@ const MarketContainer = (props) => {
   return (
     <>
     <div className="market">
-      <MarketFilters /> 
+      <MarketFilters setLowHighPrice={props.setLowHighPrice} resetFilters={props.resetFilters}/> 
       <div className="market-list">
       {guitars}
       </div>

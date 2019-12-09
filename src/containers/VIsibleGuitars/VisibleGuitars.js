@@ -5,13 +5,16 @@ import axios from 'axios';
 class VisibleGuitars extends Component {
   state = {
     guitars: [],
-    filteredGuitars: [],
+    // filteredGuitars: [],
+    // lowPrice: '',
+    // highPrice: '',
   };
 
   componentWillMount() {
     this.setState({
-      poets,
-      filteredGuitars: guitars,
+      filteredGuitars: this.props.guitars,
+      lowPrice: 30,
+      highPrice: 100
     });
   };
 
@@ -27,18 +30,21 @@ class VisibleGuitars extends Component {
     })
   };
 
+filteredByPrice(this.state.lowprice)
+
   filteredByPrice = (lowPrice, highPrice) => {
-    let filteredGuitars = this.state.guitars
-    filteredGuitars = filteredGuitars.filter((guitar) => {
-      if (guitar.price < lowPrice || guitar.price > highPrice) {
-        return false
-      } else {
-        return true
-      }
-    })
-    this.setState({
-      filteredGuitars
-    })
+
+    return this.state.guitars.filter(guitar => {return guitar.price > this.state.lowPrice && guitar.price < this.state.highPrice})
+
+    // let filteredGuitars = this.state.guitars
+    // filteredGuitars = filteredGuitars.filter((guitar) => {
+    //   if (guitar.price < lowPrice || guitar.price > highPrice) {
+    //     return false
+    //   } else {
+    //     return true
+    //   }
+    // })
+    // console.log(filteredGuitars)
   }
 
   render() {

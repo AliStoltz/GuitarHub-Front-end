@@ -12,7 +12,7 @@ class PurchaseGuitar extends Component {
 
   render() {
     return(
-      <Modal show={this.props.handlePurchaseModalOpen} onHide={this.props.handlePurchaseModalOpen}>
+      <Modal show={this.props.purchaseModalOpen} onHide={this.props.handlePurchaseModalOpen}>
         <Modal.Header closeButton>
           <Modal.Title>Would you like to add this guitar to your cart?</Modal.Title>
         </Modal.Header>
