@@ -1,0 +1,17 @@
+.detial-image {
+  width: 50%;
+  margin: 40px;
+}
+
+.detial-image img {
+  max-height: 500px;
+  max-width: 500px;
+}
+
+.detail-info {
+  width: 50%;
+  margin: 40px;
+  padding: 40px;
+}
+
+

@@ -1,7 +1,7 @@
 import React from 'react';
 import './MarketContainer.css';
 import { Link } from 'react-router-dom';
-import MarketFilters from '../MarketFilters/MarketFilters';
+import MarketFilters from '../../components/MarketFilters/MarketFilters';
 
 
 const MarketContainer = (props) => {
