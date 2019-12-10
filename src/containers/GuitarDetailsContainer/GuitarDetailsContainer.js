@@ -45,6 +45,7 @@ class GuitarDetailsContainer extends Component{
     this.handlePurchaseModalOpen();
   }
 
+
   
 
   render() {
@@ -65,7 +66,7 @@ class GuitarDetailsContainer extends Component{
         <br/>
         <Button id="addCart" name="add-guitar" onClick={() => this.handlePurchaseModalOpen()} variant="outline-primary">Add To Cart</Button>
       </div>
-      <PurchaseGuitar purchaseModalOpen={this.state.purchaseModalOpen} handlePurchaseModalOpen={this.handlePurchaseModalOpen} handlePurchaseCancel={this.handlePurchaseCancel}
+      <PurchaseGuitar purchaseModalOpen={this.state.purchaseModalOpen} handlePurchaseModalOpen={this.handlePurchaseModalOpen} handlePurchaseCancel={this.handlePurchaseCancel} handlePurchase={this.props.handlePurchase}
        />
       </>
     )

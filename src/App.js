@@ -14,6 +14,7 @@ class App extends Component {
     lowPrice: '',
     highPrice: '',
     guitarFilter: '',
+    cart: 0,
   };
 
 
@@ -73,6 +74,13 @@ class App extends Component {
     this.test();
   }
 
+  handlePurchase = () => {
+    console.log('cart added')
+    this.setState({
+      cart: this.state.cart +1,
+    })
+  } 
+
   setCurrentUser = (userId) => {
     this.setState({ currentUser: userId });
     localStorage.setItem('uid', userId);
@@ -94,7 +102,8 @@ class App extends Component {
         <Navbar
         currentUser={this.state.currentUser}
         setCurrentUser={this.setCurrentUser}
-        logout={this.logout} />
+        logout={this.logout} 
+        handlePurchase={this.handlePurchase}/>
         <Routes
         currentUser={this.state.currentUser}
         setCurrentUser={this.setCurrentUser} 
@@ -103,6 +112,7 @@ class App extends Component {
         resetFilters={this.resetFilters} 
         handleChange={this.handleChange}
         filteredByName={this.filteredByName}
+        handlePurchase={this.handlePurchase}
         />
       </div>
     );

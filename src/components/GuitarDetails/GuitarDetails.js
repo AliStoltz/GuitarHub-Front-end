@@ -7,7 +7,7 @@ class GuitarDetails extends Component {
   render () {
     return (
       <div className="details-container">
-        <GuitarDetailsContainer />
+        <GuitarDetailsContainer handlePurchase={this.props.handlePurchase} />
       </div>
     )
   }

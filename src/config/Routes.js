@@ -8,13 +8,13 @@ import { tsPropertySignature } from '@babel/types';
 
 
 
-export default ({ currentUser, setCurrentUser, guitars, setLowHighPrice, resetFilters, filteredByName, handleChange, }) => (
+export default ({ currentUser, setCurrentUser, guitars, setLowHighPrice, resetFilters, filteredByName, handleChange, handlePurchase }) => (
   <div className="routes">
     <Switch>
       <Route exact path='/' render={() => <Landing guitars={guitars} currentUser={currentUser} setCurrentUser={setCurrentUser}/>} />
       <Route path="/buy/" render={() => <MarketContainer guitars={guitars} currentUser={currentUser} setLowHighPrice={setLowHighPrice} resetFilters={resetFilters} filteredByName={filteredByName} handleChange={handleChange} /> } />
       <Route path="/sell/:id" render={() => <SellerProfile currentUser={currentUser} />} />
-      <Route path="/details/:id" render={() => <GuitarDetails />} />
+      <Route path="/details/:id" render={() => <GuitarDetails handlePurchase={handlePurchase} />} />
     </Switch>
   </div>
 );

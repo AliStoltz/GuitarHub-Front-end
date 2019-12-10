@@ -40,6 +40,8 @@ class Navbar extends React.Component {
     this.props.history.push(`/buy`);
   }
 
+
+
   render () {
     return (
       <>
@@ -73,6 +75,9 @@ class Navbar extends React.Component {
             <li className="nav-item">
               <span className="btn btn-outline-light nav-link nav-link" onClick={this.props.logout}>Logout</span>
             </li>
+            <li className="nav-item">
+              <span id="cart"><i class="fa fa-shopping-cart"></i>{this.props.cart}</span>
+            </li>
             </>
           }
           </ul>
@@ -85,7 +90,8 @@ class Navbar extends React.Component {
       <Signup 
       signupModalOpen={this.state.signupModalOpen}
       handleSignupModalOpen={this.handleSignupModalOpen}
-      setCurrentUser={this.props.setCurrentUser}/>
+      setCurrentUser={this.props.setCurrentUser}
+       />
       </>
     );
   };
