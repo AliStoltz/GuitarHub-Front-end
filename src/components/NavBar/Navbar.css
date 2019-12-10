@@ -1,0 +1,11 @@
+.navbar {
+  background: rgb(58, 44, 44);
+}
+.navbar a {
+  color: white;
+  font-size: 30px;
+}
+
+.btn-outline-light {
+  color: white !important;
+}

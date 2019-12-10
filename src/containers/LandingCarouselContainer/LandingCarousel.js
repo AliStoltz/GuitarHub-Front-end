@@ -13,7 +13,7 @@ const LandingCarousel = (props) => {
   
     return (
       <>
-      <div>
+      <div className="carousel-card">
         <h2 className="ahhh"> {guitar.name}</h2>
         <img className="guitarImg"src={guitar.photo} alt="guitar"/>
         <p>${guitar.price}.00</p>
@@ -25,44 +25,32 @@ const LandingCarousel = (props) => {
   return (
     <>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
+      {/* <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-      </ol>
+      </ol> */}
       <div class="carousel-inner">
         { props.guitars.length ? 
         <>
         <div class="carousel-item active">
           <div className="row">
             <div className="col">{guitars[0]}</div>
-          </div>
-          <div className="row">
             <div className="col">{guitars[1]}</div>
-          </div>
-          <div className="row">
             <div className="col">{guitars[2]}</div>
           </div>
         </div>
         <div class="carousel-item">
           <div className="row">
             <div className="col">{guitars[3]}</div>
-          </div>
-          <div className="row">
             <div className="col">{guitars[4]}</div>
-          </div>
-          <div className="row">
             <div className="col">{guitars[5]}</div>
           </div>
         </div>
         <div class="carousel-item">
           <div className="row">
             <div className="col">{guitars[6]}</div>
-          </div>
-          <div className="row">
             <div className="col">{guitars[7]}</div>
-          </div>
-          <div className="row">
             <div className="col">{guitars[8]}</div>
           </div>
         </div>

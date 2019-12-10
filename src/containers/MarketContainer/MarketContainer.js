@@ -14,6 +14,7 @@ const MarketContainer = (props) => {
           <div className="market-container">
             <h4><b>{guitar.name}</b></h4>
             <p>${guitar.price}.00</p>
+            <p>Condition: {guitar.condition}</p>
             <p>Posted by: {guitar.user.username}</p>
           </div>
         </div>

@@ -22,6 +22,7 @@ class MarketFilters extends Component {
         </form>
         <br/>
         <ul>
+          <p>Sort by Price:</p>
           <button data-lowPrice={30} data-highPrice={100} onClick={this.handleFilterClick}>$30-$100</button>
           <br/>
           <button data-lowPrice={100} data-highPrice={500} onClick={this.handleFilterClick}>$100-$500</button>
@@ -30,7 +31,7 @@ class MarketFilters extends Component {
           <br/>
           <button data-lowPrice={1000} data-highPrice={5000} onClick={this.handleFilterClick}>$1,000-$5,000</button>
         </ul>
-        <Button id="reset" name="reset-filters" onClick={this.props.resetFilters} variant="outline-secondary">Reset</Button>
+        <Button id="reset" name="reset-filters" onClick={this.props.resetFilters} variant="dark">Reset</Button>
       </aside>
     )
   }

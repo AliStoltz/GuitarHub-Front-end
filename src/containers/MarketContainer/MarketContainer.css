@@ -2,21 +2,24 @@
   width: 250px;
   min-height: 250px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  background-color: rgba(58, 44, 44, .8);
+  border: 3px solid rgba(58, 44, 44, .8);
   transition: 0.3s;
   top: 50%;
   left: 50%;
+  margin-bottom: 10px;
+  border-radius: 5%;
 }
 
 .market {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-
+  
 }
 
 .market-img {
-  height: 150px;
-  width: 140px;
+  height: 230px;
+  width: 230px;
   padding: 10px;
 }
 
@@ -26,12 +29,30 @@
 
 
 .market-container {
+  background-color: whitesmoke;
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
   padding: 2px 16px;
+}
+
+.market-container p {
+  color: black;
+}
+
+.market-container h4 {
+  color: black;
 }
 
 .market-list {
   flex-wrap: wrap;
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+  margin: 50px;
+}
+
+.market-list {
+  min-width: 70%;
+
 }
 

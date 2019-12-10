@@ -43,7 +43,7 @@ class Navbar extends React.Component {
   render () {
     return (
       <>
-      <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-md ">
         <Link className="navbar-brand" to="/">
         <span>GuitarHub</span>
         </Link>

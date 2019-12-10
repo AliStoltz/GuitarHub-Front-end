@@ -1,25 +1,57 @@
 
 aside {
-  width: 26%;
-  height: 100%;
+  width: 40%;
+  height: 80vh;
   text-align: center;
   padding-right: 16px;
   padding-right: 1rem;
+  margin: 30px;
+}
+
+aside form {
+  padding: 20px;
 }
 
 aside {
   padding-top: 48px;
   padding-top: 3rem;
+  background-color: rgba(159, 157, 157, 0.3);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
+
+aside p {
+  font-size: 20px;
+}
+
+aside label {
+  font-size: 20px;
+}
+
 aside ul {
   list-style: none;
   padding-left: 16px;
   padding-left: 1rem;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
+
+aside ul button {
+  background-color: white;
+  border: 1.5px solid black;
+  border-radius: 10%;
+  color: black;
+}
+
 aside li {
   margin-bottom: 15px;
   display: list-item;
 
+}
+
+#reset {
+  height: 30px;
+  width: 70px;
+  font-size: 15px;
+  padding: 4px;
 }
