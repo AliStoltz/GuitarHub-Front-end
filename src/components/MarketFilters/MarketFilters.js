@@ -8,14 +8,6 @@ class MarketFilters extends Component {
     guiterFilter: '',
   };
 
-
-  handleChange = (event) => {
-    this.setState({
-      guitarFilter: event.target.value
-    })
-    this.props.onChange(event.target.value)
-  };
-
   handleFilterClick = (event) => {
     this.props.setLowHighPrice(event.target.getAttribute('data-lowPrice'), event.target.getAttribute('data-highPrice'));
   }
@@ -24,10 +16,11 @@ class MarketFilters extends Component {
   render() {
     return (
       <aside>
-        <ul>
+        <form onSubmit={this.props.filteredByName}>
           <label htmlFor="filter">Filter by Name: </label>
-          <input type="text" id="filter" value={this.state.guitarFilter} onChange={this.handleChange} />
-        </ul>
+          <input type="text" id="filter" value={this.props.guitarFilter} onChange={this.props.handleChange} />
+        </form>
+        <br/>
         <ul>
           <button data-lowPrice={30} data-highPrice={100} onClick={this.handleFilterClick}>$30-$100</button>
           <br/>

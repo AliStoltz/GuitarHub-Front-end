@@ -11,9 +11,9 @@ class App extends Component {
   state = {
     currentUser: localStorage.getItem('uid'),
     guitars: [],
-    // filteredGuitars: [],
     lowPrice: '',
     highPrice: '',
+    guitarFilter: '',
   };
 
 
@@ -32,6 +32,28 @@ class App extends Component {
     .catch((err) => console.log(err));
   };
 
+    handleChange = (event) => {
+    this.setState({
+      guitarFilter: event.target.value
+    })
+  };
+
+  filteredByName = (event) => {
+    event.preventDefault();
+    let guitars = [...this.state.guitars];
+
+    const filteredGuitars = guitars.filter((guitar) => {
+      console.log(guitar);
+      return (guitar.name.toLowerCase().search(new RegExp(this.state.guitarFilter.toLowerCase())) !== -1);
+    });
+
+    console.log('Filtered Guitars ---> ', filteredGuitars);
+    this.setState({
+      guitars: filteredGuitars,
+    })
+
+  };
+
   setLowHighPrice = (low, high) => {
     const lowPrice = Number(low);
     const highPrice = Number(high);
@@ -48,10 +70,8 @@ class App extends Component {
   };
 
   resetFilters = () => {
-    this.componentDidMount();
+    this.test();
   }
-
-
 
   setCurrentUser = (userId) => {
     this.setState({ currentUser: userId });
@@ -78,7 +98,12 @@ class App extends Component {
         <Routes
         currentUser={this.state.currentUser}
         setCurrentUser={this.setCurrentUser} 
-        guitars={this.state.guitars} setLowHighPrice={this.setLowHighPrice} resetFilters={this.resetFilters}/>
+        guitars={this.state.guitars} 
+        setLowHighPrice={this.setLowHighPrice} 
+        resetFilters={this.resetFilters} 
+        handleChange={this.handleChange}
+        filteredByName={this.filteredByName}
+        />
       </div>
     );
   }

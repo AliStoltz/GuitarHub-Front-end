@@ -5,9 +5,9 @@ import axios from 'axios';
 class VisibleGuitars extends Component {
   state = {
     guitars: [],
-    // filteredGuitars: [],
-    // lowPrice: '',
-    // highPrice: '',
+    filteredGuitars: [],
+    lowPrice: '',
+    highPrice: '',
   };
 
   componentWillMount() {
