@@ -75,9 +75,11 @@ class Navbar extends React.Component {
             <li className="nav-item">
               <span className="btn btn-outline-light nav-link nav-link" onClick={this.props.logout}>Logout</span>
             </li>
-            <li className="nav-item">
-              <span id="cart"><i class="fa fa-shopping-cart"></i>{this.props.cart}</span>
-            </li>
+            <Link to={'/allen'}>
+              <li className="nav-item">
+                <span id="cart"><i class="fa fa-shopping-cart"></i>{this.props.cart}</span>
+              </li>
+            </Link>
             </>
           }
           </ul>

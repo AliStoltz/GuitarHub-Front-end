@@ -4,7 +4,7 @@ import Landing from '../components/Landing/Landing';
 import MarketContainer from '../containers/MarketContainer/MarketContainer';
 import SellerProfile from '../components/SellerProfile/SellerProfile';
 import GuitarDetails from '../components/GuitarDetails/GuitarDetails';
-import { tsPropertySignature } from '@babel/types';
+import Allen from '../components/Allen/Allen';
 
 
 
@@ -15,6 +15,7 @@ export default ({ currentUser, setCurrentUser, guitars, setLowHighPrice, resetFi
       <Route path="/buy/" render={() => <MarketContainer guitars={guitars} currentUser={currentUser} setLowHighPrice={setLowHighPrice} resetFilters={resetFilters} filteredByName={filteredByName} handleChange={handleChange} /> } />
       <Route path="/sell/:id" render={() => <SellerProfile currentUser={currentUser} />} />
       <Route path="/details/:id" render={() => <GuitarDetails handlePurchase={handlePurchase} />} />
+      <Route path="/allen" component={Allen} />
     </Switch>
   </div>
 );
