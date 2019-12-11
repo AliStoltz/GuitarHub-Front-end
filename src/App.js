@@ -93,9 +93,12 @@ class App extends Component {
         localStorage.removeItem('uid');
         this.setState({ currentUser: null });
         this.props.history.push('/');
+        this.state.cart = 0;
       })
       .catch(err => console.log(err))
   }
+
+
   render() {
     return (
       <div className="App">
