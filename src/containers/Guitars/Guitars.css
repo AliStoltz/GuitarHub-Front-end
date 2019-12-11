@@ -1,32 +1,48 @@
 .user-guitars {
   min-height: 100vh;
-  /* width: 30%; */
-  border: 2px solid black;
+  /* display: flex;
+  flex-direction: row; */
+  /* justify-items: center; */
 }
 
 .guitar-card {
-  /* width: 250px;
-  height: 250px; */
+  display: flex;
+  flex-direction: row;
   padding: 10px;
   margin: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   top: 50%;
   left: 50%;
-  border: 1px solid brown;
+  background-color: rgba(58, 44, 44, .5);
+  border-radius: 3%;
+  width: 600px;
 }
 
 .guitar-img {
-  height: 150px;
-  width: 140px;
+  height: 250px;
+  width: 240px;
   padding: 10px;
+  border-radius: 10%;
 }
 
 .guitar-card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 4px 2px 2px rgba(150, 150, 150, 0.93);
 }
 
 
-.guitar-container {
+/* .guitar-container {
   padding: 2px 16px;
+} */
+
+.guitar-container h3 {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+  margin: 25px;
+}
+
+.guitar-container {
+  padding-left: 70px;
 }

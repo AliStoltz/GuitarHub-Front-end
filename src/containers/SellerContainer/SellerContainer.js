@@ -89,7 +89,7 @@ class SellerContainer extends Component {
       <>
       <div>
         <h1>{this.state.profile.username}</h1>
-        <p>{this.state.profile.location}</p>
+        <p>Located in:<br/>{this.state.profile.location}</p>
       </div>
       <div className="user-profile">
         {this.state.edit ?

@@ -7,13 +7,17 @@ const Guitars = (props) => {
   const guitars = props.guitars.map(guitar => {
     return (
       <div className="guitar-card">
-        <img className="guitar-img" src={guitar.photo} />
+        <div className="image">
+          <img className="guitar-img" src={guitar.photo} />
+        </div>
         <div className="guitar-container">
           <h3>{guitar.name}</h3>
-          <p>{guitar.description}</p>
+          <p>${guitar.price}.00</p>
+          <p>Condition: {guitar.condition}</p>
+          {/* <p>Description:<br/>{guitar.description}</p> */}
+          <Button id="edit" name="edit-guitar" onClick={() => props.editGuitar(guitar)} variant="outline-light">Edit Post</Button>
+          <Button className='remove' onClick={() => props.handleDeleteModalOpen(guitar)} variant="outline-light">Delete</Button>
         </div>
-        <Button id="edit" name="edit-guitar" onClick={() => props.editGuitar(guitar)} variant="outline-secondary">Edit Post</Button>
-        <Button className='remove' onClick={() => props.handleDeleteModalOpen(guitar)} variant="outline-primary">Delete</Button>
       </div>
     )
   })
@@ -21,9 +25,7 @@ const Guitars = (props) => {
 
   return (
     <div className="user-guitars">
-      <div>
         {guitars}
-      </div>
     </div>
   )
 }

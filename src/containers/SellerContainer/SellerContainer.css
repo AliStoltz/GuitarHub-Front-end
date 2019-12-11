@@ -1,14 +1,25 @@
 .user-profile {
-  padding: 20px;
-  margin: 15px;
+  padding-right: 20px;
+  padding-left: 20px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  /* min-width: 100vh;
-  min-height: 100%;  */
+  align-items: center;
 }
 
 .user-guitars {
-  min-width: 70%;
-  min-height: 70%; 
+  /* min-width: 70%;
+  min-height: 70%;  */
+  /* margin-left: 200px; */
+}
+
+h1 {
+  color: rgba(58, 44, 44, .8);
+  font-size: 45px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+p {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
 }
