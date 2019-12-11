@@ -1,6 +1,7 @@
 import React from 'react';
 import './LandingCarousel.css';
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Link } from 'react-router-dom';
 
 
 const LandingCarousel = (props) => {
@@ -14,7 +15,7 @@ const LandingCarousel = (props) => {
     return (
       <>
       <div className="carousel-card">
-        <h2 className="ahhh"> {guitar.name}</h2>
+        <h2 className="guitar-name"> {guitar.name}</h2>
         <img className="guitarImg"src={guitar.photo} alt="guitar"/>
         <p>${guitar.price}.00</p>
       </div>
@@ -24,6 +25,7 @@ const LandingCarousel = (props) => {
 
   return (
     <>
+    <Link to={'/buy/'}>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         { props.guitars.length ? 
@@ -64,6 +66,7 @@ const LandingCarousel = (props) => {
         <span class="sr-only">Next</span>
       </a>
     </div>
+    </Link>
   </>
   )
 }
