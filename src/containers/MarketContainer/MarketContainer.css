@@ -9,12 +9,15 @@
   left: 50%;
   margin-bottom: 10px;
   border-radius: 5%;
+  transform: translateY(10px);
+  transition: 0.4s;
 }
 
 .market {
   display: flex;
   flex-direction: row;
-  
+  min-width: 100%;
+  min-height: 100%; 
 }
 
 .market-img {
@@ -24,7 +27,8 @@
 }
 
 .market-card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 10px 10px 17px 0px rgba(0,0,0,0.36);  
+  transform: translateY(0px);
 }
 
 
@@ -36,11 +40,16 @@
 }
 
 .market-container p {
-  color: black;
+  color: rgb(58, 44, 44);
+  text-shadow: 4px 0px 10px rgba(0,0,0,0.6);
+  font-family: 'Montserrat', sans-serif;
+
 }
 
 .market-container h4 {
-  color: black;
+  color: rgba(58, 44, 44, .8);
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .market-list {
@@ -48,7 +57,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin: 50px;
+  margin: 30px;
 }
 
 .market-list {

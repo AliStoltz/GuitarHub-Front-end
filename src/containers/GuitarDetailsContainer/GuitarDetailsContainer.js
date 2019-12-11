@@ -57,14 +57,14 @@ class GuitarDetailsContainer extends Component{
       <div className="detail-info">
         <h3>{this.state.detail.name}</h3>
         <br/>
-        <p>${this.state.detail.price}.00</p>
+        <p id="price">${this.state.detail.price}.00</p>
         <br/>
         <p><em>Current Condition:</em> {this.state.detail.condition}</p>
         <br/>
         <p><em>Description:</em> {this.state.detail.description}</p>
         <p>posted by: {this.state.user.username}</p>
         <br/>
-        <Button id="addCart" name="add-guitar" onClick={() => this.handlePurchaseModalOpen()} variant="outline-primary">Add To Cart</Button>
+        <Button id="addCart" name="add-guitar" onClick={() => this.handlePurchaseModalOpen()} variant="outline-light">Add To Cart</Button>
       </div>
       <PurchaseGuitar purchaseModalOpen={this.state.purchaseModalOpen} handlePurchaseModalOpen={this.handlePurchaseModalOpen} handlePurchaseCancel={this.handlePurchaseCancel} handlePurchase={this.props.handlePurchase}
        />

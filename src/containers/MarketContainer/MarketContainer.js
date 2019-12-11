@@ -8,7 +8,7 @@ const MarketContainer = (props) => {
   console.log(props)
   const guitars = props.guitars.map(guitar => {
     return (
-      <Link to={`/details/${guitar._id}`}>
+      <Link style={{ textDecoration: 'none' }} to={`/details/${guitar._id}`}>
         <div className="market-card">
           <img className="market-img" src={guitar.photo} alt="guitar"/>
           <div className="market-container">

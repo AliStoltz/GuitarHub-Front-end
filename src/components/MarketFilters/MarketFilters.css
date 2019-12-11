@@ -1,11 +1,12 @@
 
 aside {
-  width: 40%;
-  height: 80vh;
+  /* width: 40%;
+  height: 100vh;
   text-align: center;
   padding-right: 16px;
   padding-right: 1rem;
-  margin: 30px;
+  margin: 30px; */
+  /* background-color: rgb(58, 44, 44); */
 }
 
 aside form {
@@ -15,22 +16,27 @@ aside form {
 aside {
   padding-top: 48px;
   padding-top: 3rem;
-  background-color: rgba(159, 157, 157, 0.3);
+  background-color: rgb(58, 44, 44);
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  height: 100vh;
+  text-align: center;
 }
 
 aside p {
   font-size: 20px;
+  color: whitesmoke;
 }
 
 aside label {
   font-size: 20px;
+  color: whitesmoke;
 }
 
 aside ul {
   list-style: none;
-  padding-left: 16px;
-  padding-left: 1rem;
+  /* padding-left: 16px;
+  padding-left: 1rem; */
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,6 +47,12 @@ aside ul button {
   border: 1.5px solid black;
   border-radius: 10%;
   color: black;
+  font-size: 15px;
+}
+
+aside ul button:hover {
+  box-shadow: 0 8px 16px 0 rgba(252, 251, 251, 0.2);
+  font-weight: bold;
 }
 
 aside li {
@@ -54,4 +66,9 @@ aside li {
   width: 70px;
   font-size: 15px;
   padding: 4px;
+  
+}
+
+#reset:hover {
+  box-shadow: 0 5px 16px 0 rgba(252, 251, 251, 0.2);
 }

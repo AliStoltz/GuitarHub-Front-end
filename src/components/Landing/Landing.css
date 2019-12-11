@@ -9,15 +9,15 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 50vh;
+  height: 55vh;
   width: 100%;
   z-index: -10;
 }
 
 .welcome {
   position: absolute;
-  top: 40%;
-  left: 40%;
+  top: 37%;
+  left: 37%;
   z-index: 10;
   height: 100px;
   width: 200px;
