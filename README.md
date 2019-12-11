@@ -1,68 +1,38 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## GuitarHub
+[link to GuitarHub on Heroku](https://guitar-hub-frontend.herokuapp.com/)
 
-## Available Scripts
+## About GuitarHub
+* GuitarHub is a buy, sell, trade platform for guitar fanatics. Users can create an account, shop the marketplace, or post guitars for sale on their profile page. Filter guitars based on name or price range. Details page gives information on the guitar such as, price, current condition, location of the seller and a breif description. 
 
-In the project directory, you can run:
+## Technologies 
+* MERN (mongoDB, Express.js, React.js, and Node.js)
+* Viet Coffee
+* Kenny, Dalton, Allen
 
-### `npm start`
+## Installations 
+* bcryptjs
+* body-parser
+* connect-mongo
+* CORS
+* dotenv
+* express-sessions
+* express
+* mongoose
+* nodemon
+* axios
+* react-router-dom
+* react-bootstrap
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## User Story
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+* Without an account you can browse the site and see what posting are availible. The posts will simply have a picture of the guitar for sale and the price, but no further details or the ability to add it to a cart. Creating an account allows you to post guitars, shop for guitars and keep track of your buying history. There will be a filter section availible to refine your search. As a stretch goal there will be a comments section where you can ask questions about the post as well as communicate with the seller about delivery details (i.e. pick up location, shipping costs, ect.)
 
-### `npm test`
+## ERD
+![ERD](ERD1.png)
+![ERD](ERD2.png)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Wireframes
+[Link to Wireframes](https://app.moqups.com/2jzW8q62jX/edit/page/ad64222d5)
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Future Features
+* In the future I would like to build out my user cart and add a payment feature that takes the buyers card info and returns a recipt. I also want to add a comments/questions section, or some way for the users to communicate to the seller. 
