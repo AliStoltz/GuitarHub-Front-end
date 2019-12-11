@@ -49,6 +49,7 @@ class Signup extends Component {
 
   handleSubmit = () => {
     console.log('look at me')
+    console.log(process.env.REACT_APP_API_URL + '/auth/register');
     axios.post(`${process.env.REACT_APP_API_URL}/auth/register`,
     this.state, {
       withCredentials: true,

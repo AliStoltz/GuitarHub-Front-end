@@ -8,7 +8,10 @@ class PurchaseGuitar extends Component {
     addToCart: false,
   };
 
- 
+ handleModalYes = () => {
+  this.props.handlePurchase();
+  this.props.handlePurchaseCancel();
+ }
 
   render() {
     return(
@@ -18,7 +21,7 @@ class PurchaseGuitar extends Component {
         </Modal.Header>
         <Modal.Body>
           <button onClick={this.props.handlePurchaseCancel} type="button" className="btn btn-dark">Cancel</button>
-          <button onClick={this.props.handlePurchase} type="button" className="btn btn-danger">Yes</button>
+          <button onClick={this.handleModalYes} type="button" className="btn btn-danger">Yes</button>
         </Modal.Body>
       </Modal>
     )

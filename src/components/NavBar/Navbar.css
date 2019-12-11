@@ -1,11 +1,17 @@
 .navbar {
   background: rgb(58, 44, 44);
+  height: 50px;
 }
 .navbar a {
   color: white;
   font-size: 30px;
 }
 
+.nav-item .btn {
+  padding: 5px;
+  margin-top: 10px;
+}
+ 
 .btn-outline-light {
   color: white !important;
 }

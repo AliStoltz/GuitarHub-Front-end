@@ -57,9 +57,6 @@ class SellerContainer extends Component {
     })
   };
 
-    // let newGuitarList = this.state.arr.filter(guitar => this.guitar._id !== this.guitar.id);
-    // newGuitarList.push(guitar)
-    // this.setState({arr:newGuitarList})
 
   updateState = (updatedGuitar) => {
     console.log(updatedGuitar)
@@ -71,7 +68,7 @@ class SellerContainer extends Component {
     this.componentDidMount();
   };
 
-  // Create your handleAddNewGuitar method
+
   handleNewGuitar = (newGuitar) => {
     axios.post(`${process.env.REACT_APP_API_URL}/guitars/new`, newGuitar ,{
       withCredentials: true
@@ -98,7 +95,7 @@ class SellerContainer extends Component {
         {this.state.edit ?
         <EditGuitarInfo guitar={this.state.guitar} updateState={this.updateState} userGuitars={this.state.userGuitars}/>
         : <GuitarPostForm 
-        currentUser={this.props.currentUser} handleNewGuitar={this.handleNewGuitar} handleChange={this.handleChange}/> }
+        currentUser={this.props.currentUser} handleNewGuitar={this.handleNewGuitar} handleChange={this.handleChange} /> }
         <Guitars guitars={this.state.userGuitars} editGuitar={this.editGuitar} deleteModalOpen={this.state.deleteModalOpen} handleDeleteModalOpen={this.handleDeleteModalOpen}
          /> 
         <DeleteGuitar guitar={this.state.guitar} deleteModalOpen={this.state.deleteModalOpen} handleDeleteModalOpen={this.handleDeleteModalOpen}/>

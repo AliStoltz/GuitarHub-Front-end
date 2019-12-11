@@ -103,7 +103,8 @@ class App extends Component {
         currentUser={this.state.currentUser}
         setCurrentUser={this.setCurrentUser}
         logout={this.logout} 
-        handlePurchase={this.handlePurchase}/>
+        handlePurchase={this.handlePurchase}
+        cart={this.state.cart}/>
         <Routes
         currentUser={this.state.currentUser}
         setCurrentUser={this.setCurrentUser} 
