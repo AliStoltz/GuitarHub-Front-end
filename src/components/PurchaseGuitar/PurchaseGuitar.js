@@ -17,11 +17,11 @@ class PurchaseGuitar extends Component {
     return(
       <Modal show={this.props.purchaseModalOpen} onHide={this.props.handlePurchaseModalOpen}>
         <Modal.Header closeButton>
-          <Modal.Title>Would you like to add this guitar to your cart?</Modal.Title>
+          <Modal.Title>Add to cart?</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <button onClick={this.props.handlePurchaseCancel} type="button" className="btn btn-dark">Cancel</button>
-          <button onClick={this.handleModalYes} type="button" className="btn btn-danger">Yes</button>
+          <button onClick={this.props.handlePurchaseCancel} type="button" className="btn btn-light">Cancel</button>
+          <button onClick={this.handleModalYes} type="button" className="btn btn-light">Yes</button>
         </Modal.Body>
       </Modal>
     )

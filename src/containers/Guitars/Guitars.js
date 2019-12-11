@@ -14,7 +14,6 @@ const Guitars = (props) => {
           <h3>{guitar.name}</h3>
           <p>${guitar.price}.00</p>
           <p>Condition: {guitar.condition}</p>
-          {/* <p>Description:<br/>{guitar.description}</p> */}
           <Button id="edit" name="edit-guitar" onClick={() => props.editGuitar(guitar)} variant="outline-light">Edit Post</Button>
           <Button className='remove' onClick={() => props.handleDeleteModalOpen(guitar)} variant="outline-light">Delete</Button>
         </div>

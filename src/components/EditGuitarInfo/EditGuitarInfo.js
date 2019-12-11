@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 
-import './EditGuitarInfo.css';
-
 class EditGuitarInfo extends Component {
   state = {
     name: '',
@@ -56,32 +54,32 @@ class EditGuitarInfo extends Component {
     return (
       <div className="guitar-form">
         <form onSubmit={this.handleSubmit} >
-          <div className="form-group">
+          <div className="form-group edit">
             <label htmlFor="name">Type of Guitar</label>
             <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="name" name="name" value={this.state.name} minLength="1" maxLength="200" />
             {this.state.nameReq === false ? null : <small className="error-msg">Please add a guitar type.</small>}
           </div>
-          <div className="form-group">
+          <div className="form-group edit">
             <label htmlFor="photo">Photo URL</label>
             <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="photo" name="photo" value={this.state.photo} />
             {this.state.photoReq === false ? null : <small className="error-msg">Please add a photo.</small>}
           </div>
-          <div className="form-group">
+          <div className="form-group edit">
             <label htmlFor="condition">Current condition</label>
             <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="condition" name="condition" value={this.state.condition} minLength="1" maxLength="200" />
             {this.state.conditionReq === false ? null : <small className="error-msg">Please add the current condition.</small>}
           </div>
-          <div className="form-group">
+          <div className="form-group edit">
             <label htmlFor="description">Guitar Details</label>
             <textarea onChange={this.handleChange} className="form-control form-control-lg" type="text" id="description" name="description" value={this.state.description} required />
             {this.state.descriptionReq === false ? null : <small className="error-msg">Please add a detailed description.</small>}
           </div>
-          <div className="form-group">
+          <div className="form-group edit">
             <label htmlFor="price">Asking price</label>
             <input onChange={this.handleChange} className="form-control form-control-lg" type="text" id="price" name="price" value={this.state.price} required />
             {this.state.priceReq === false ? null : <small className="error-msg">Please add the price.</small>}
           </div>
-          <Button id="save" name="save-guitar" onClick={this.saveChanges} variant="outline-secondary">Save Changes</Button>
+          <Button id="save" name="save-guitar" onClick={this.saveChanges} variant="outline-primary">Save Changes</Button>
         </form>
       </div>
     )

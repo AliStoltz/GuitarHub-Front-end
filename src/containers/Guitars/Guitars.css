@@ -1,8 +1,5 @@
 .user-guitars {
   min-height: 100vh;
-  /* display: flex;
-  flex-direction: row; */
-  /* justify-items: center; */
 }
 
 .guitar-card {
@@ -30,10 +27,6 @@
   box-shadow: 4px 2px 2px rgba(150, 150, 150, 0.93);
 }
 
-
-/* .guitar-container {
-  padding: 2px 16px;
-} */
 
 .guitar-container h3 {
   font-size: 30px;
